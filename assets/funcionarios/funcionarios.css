@@ -1,0 +1,89 @@
+.funcionarios-container {
+  padding: 24px;
+}
+
+.topo-lista {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.acoes-topo {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+.acoes-topo input {
+  padding: 8px;
+  border-radius: 6px;
+  border: 1px solid #d1d5db;
+  min-width: 280px;
+}
+
+.tabela {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+}
+
+.tabela th,
+.tabela td {
+  padding: 10px;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.tabela th {
+  text-align: left;
+  color: #6b7280;
+}
+
+
+.tipo {
+  padding: 4px 10px;
+  border-radius: 999px;
+  font-size: 12px;
+  width: fit-content;
+}
+
+.tipo.eleitor {
+  background: #dcfce7;
+  color: #166534;
+}
+
+.tipo.comissao {
+  background: #ffedd5;
+  color: #9a3412;
+}
+
+.tipo.administrador {
+  background: #dbeafe;
+  color: #1d4ed8;
+}
+
+
+.acoes {
+  display: flex;
+  gap: 6px;
+}
+
+.btn-editar {
+  background: #e0f2fe;
+  color: #0369a1;
+  border: none;
+  padding: 6px 8px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 12px;
+}
+
+.btn-excluir {
+  background: #fee2e2;
+  color: #991b1b;
+  border: none;
+  padding: 6px 8px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+

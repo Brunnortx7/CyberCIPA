@@ -1,0 +1,24 @@
+[
+  {
+    "id": 1,
+    "titulo": "CIPA 2025",
+    "status": "andamento",
+    "publicacao_edital": "2024-11-12",
+    "formacao_comissao": "2024-11-17",
+    "inicio_inscricoes": "2024-12-12",
+    "fim_inscricoes": "2025-01-06",
+    "data_eleicao": "2025-01-20",
+    "data_posse": "2025-02-10"
+  },
+  {
+    "id": 2,
+    "titulo": "CIPA 2024",
+    "status": "finalizada",
+    "publicacao_edital": "2023-11-10",
+    "formacao_comissao": "2023-11-15",
+    "inicio_inscricoes": "2023-12-01",
+    "fim_inscricoes": "2023-12-20",
+    "data_eleicao": "2024-01-10",
+    "data_posse": "2024-02-01"
+  }
+]

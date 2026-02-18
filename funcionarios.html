@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Funcionários | Eleições CIPA</title>
+
+  <link rel="stylesheet" href="./assets/style.css">
+  <link rel="stylesheet" href="./assets/menu/header.css">
+  <link rel="stylesheet" href="./assets/funcionarios/funcionarios.css">
+  <link rel="stylesheet" href="./assets/styleFeedbacks.css">
+  <link rel="stylesheet" href="./assets/modal.css">
+  <link rel="stylesheet" href="./assets/responsive.css" />
+</head>
+<body>
+
+
+  <header class="topo">
+        <div class="logo-area">
+            <h1 class="logo">Eleições CIPA</h1>
+            <span class="slogan">Gerencie e acompanhe os processos eleitorais</span>
+        </div>
+
+        
+        <button class="hamburguerMenu" id="hamburguerMenu" aria-label="Abrir menu">
+            ☰
+        </button>
+
+        <nav class="nav" id="navMenu">
+            <a href="index.html" class="btn-primary" id="btnNovaEleicao">← Voltar ao Dashboard</a>
+            <a href="perfil.html" class="nav-link">Perfil</a>
+        </nav>
+    </header>
+
+<main class="funcionarios-container">
+
+  
+  <section class="topo-lista">
+    <h2>Funcionários</h2>
+
+    <div class="acoes-topo">
+      <input
+        type="text"
+        id="filtro"
+        placeholder="Buscar por nome, matrícula, CPF ou setor..."
+        class="campo-filtro"
+      />
+
+      <button class="btn-primary" id="btnNovoFuncionario">
+        + Cadastrar Funcionário
+      </button>
+    </div>
+  </section>
+
+  
+  <div class="table-wrap">
+<table class="tabela">
+    <thead>
+      <tr>
+        <th>Nome</th>
+        <th>Matrícula</th>
+        <th>CPF</th>
+        <th>Tipo</th>
+        <th>Cargo</th>
+        <th>Setor</th>
+        <th>Nascimento</th>
+        <th>Contratação</th>
+        <th>Ações</th>
+      </tr>
+    </thead>
+
+    <tbody id="listaFuncionarios">
+      
+    </tbody>
+  </table>
+</div>
+
+</main>
+
+
+<div id="modalFuncionario" class="modal hidden">
+  <div class="modal-content">
+
+    <div class="modal-header">
+      <h3 id="tituloModalFuncionario">Cadastrar Funcionário</h3>
+      <button type="button" id="btnFecharModal">×</button>
+    </div>
+
+    <form id="formFuncionario">
+
+      <input type="hidden" name="id" id="idFuncionario">
+
+      <label>Matrícula *
+        <input type="text" name="matricula" required>
+      </label>
+
+      <label>CPF *
+        <input type="text" name="cpf" maxlength="11" required>
+      </label>
+
+      <label>Nome *
+        <input type="text" name="nome" required>
+      </label>
+
+      <label>Cargo *
+        <input type="text" name="cargo" required>
+      </label>
+
+      <label>Setor *
+        <input type="text" name="setor" required>
+      </label>
+
+      <label>Data de Nascimento *
+        <input type="date" name="data_nascimento" required>
+      </label>
+
+      <label>Data de Contratação *
+        <input type="date" name="data_contratacao" required>
+      </label>
+
+      <label>Tipo de Usuário *
+        <select name="tipo_usuario" required>
+          <option value="">Selecione</option>
+          <option value="eleitor">Eleitor</option>
+          <option value="administrador">Administrador</option>
+        </select>
+      </label>
+
+      <div class="modal-actions">
+        <button type="button" id="btnCancelarModal">Cancelar</button>
+        <button type="submit" class="btn-primary">Salvar</button>
+      </div>
+
+    </form>
+  </div>
+</div>
+
+<script src="./assets/menu/scriptMenu.js"></script>
+<script src="./assets/funcionarios/funcionarios.js"></script>
+</body>
+</html>

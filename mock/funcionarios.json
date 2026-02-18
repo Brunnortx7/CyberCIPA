@@ -1,0 +1,37 @@
+[
+  {
+    "id": 1,
+    "nome": "Ana Souza",
+    "matricula": "1001",
+    "setor": "Administrativo",
+    "email": "ana.souza@empresa.com"
+  },
+  {
+    "id": 2,
+    "nome": "Bruno Lima",
+    "matricula": "1002",
+    "setor": "Operações",
+    "email": "bruno.lima@empresa.com"
+  },
+  {
+    "id": 3,
+    "nome": "Carla Santos",
+    "matricula": "1003",
+    "setor": "RH",
+    "email": "carla.santos@empresa.com"
+  },
+  {
+    "id": 4,
+    "nome": "Diego Ferreira",
+    "matricula": "1004",
+    "setor": "Manutenção",
+    "email": "diego.ferreira@empresa.com"
+  },
+  {
+    "id": 5,
+    "nome": "Eduarda Rocha",
+    "matricula": "1005",
+    "setor": "Segurança do Trabalho",
+    "email": "eduarda.rocha@empresa.com"
+  }
+]

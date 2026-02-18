@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <title>Eleições CIPA</title>
+  <link rel="stylesheet" href="./assets/style.css" />
+  <link rel="stylesheet" href="./assets/menu/header.css" />
+  <link rel="stylesheet" href="./assets/styleFeedbacks.css"/>
+  <link rel="stylesheet" href="./assets/dashboard/dashboard.css"/>
+  <link rel="stylesheet" href="./assets/modal.css">
+  <link rel="stylesheet" href="./assets/responsive.css" />
+</head>
+<body>
+    <header class="topo">
+        <div class="logo-area">
+            <h1 class="logo">Eleições CIPA</h1>
+            <span class="slogan">Gerencie e acompanhe os processos eleitorais</span>
+        </div>
+
+        
+        <button class="hamburguerMenu" id="hamburguerMenu" aria-label="Abrir menu">
+            ☰
+        </button>
+
+        <nav class="nav" id="navMenu">
+            <a href="funcionarios.html" class="nav-link">Funcionários</a>
+            <a href="#" class="btn-primary" id="btnNovaEleicao">+ Nova Eleição</a>
+            <a href="perfil.html" class="nav-link">Perfil</a>
+        </nav>
+    </header>
+    <div id="feedback" class="feedback hidden"></div>
+    <main>
+        
+        <section class="resumo">
+        <div class="card-resumo">
+            <span>Total</span>
+            <strong id="total">0</strong>
+        </div>
+
+        <div class="card-resumo andamento">
+            <span>Em andamento</span>
+            <strong id="andamento">0</strong>
+        </div>
+
+        <div class="card-resumo finalizadas">
+            <span>Finalizadas</span>
+            <strong id="finalizadas">0</strong>
+        </div>
+        </section>
+
+        
+        <section class="filtros">
+        <input
+            type="text"
+            id="busca"
+            placeholder="Buscar eleição por título..."
+        />
+
+        <select id="filtroStatus">
+            <option value="">Todas as eleições</option>
+            <option value="andamento">Em andamento</option>
+            <option value="finalizada">Finalizadas</option>
+        </select>
+        </section>
+
+        
+        <section class="lista-eleicoes" id="listaEleicoes">
+        
+        </section>
+    </main>
+    
+    <div id="modalEditar" class="modal hidden">
+    <div class="modal-content">
+
+        <div class="modal-header">
+        <h2 id="tituloModal">Editar Eleição</h2>
+        <button id="fecharModal" type="button">×</button>
+        </div>
+
+        <form id="formEditarEleicao" enctype="multipart/form-data">
+
+        
+        <input type="hidden" id="editId">
+
+        
+        <label>
+            Título da Eleição *
+            <input type="text" id="editTitulo" name="titulo" required>
+        </label>
+
+        
+        <label>
+            Status *
+            <select id="editStatus" name="status" required>
+            <option value="">Selecione</option>
+            <option value="andamento">Em andamento</option>
+            <option value="finalizada">Finalizada</option>
+            </select>
+        </label>
+
+        
+        <label>
+            Data da Posse *
+            <input type="date" id="editPosse" name="data_posse" required>
+        </label>
+
+        
+        <label>
+            Data da Eleição *
+            <input type="date" id="editEleicao" name="data_eleicao" required>
+        </label>
+
+        
+        <label>
+            Data do Edital *
+            <input type="date" id="editEdital" name="edital" required>
+        </label>
+
+        
+        <label>
+            Upload do Edital (PDF)
+            <input type="file" id="editEditalPdf" name="edital_pdf" accept="application/pdf">
+            <small id="arquivoEditalAtual"></small>
+        </label>
+
+        
+        <label>
+            Data de Formação da Comissão *
+            <input type="date" id="editComissao" name="comissao" required>
+        </label>
+
+        
+        <label>
+            Data de Divulgação do Edital de Inscrição *
+            <input type="date" id="editDivulgacaoInscricao" name="divulgacao_inscricao" required>
+        </label>
+
+        
+        <label>
+            Início das Inscrições *
+            <input type="date" id="editInicio" name="inicio_inscricoes" required>
+        </label>
+
+        
+        <label>
+            Fim das Inscrições *
+            <input type="date" id="editFim" name="fim_inscricoes" required>
+        </label>
+
+        
+        <label>
+            Upload do Edital de Inscrição (PDF)
+            <input type="file" id="editInscricaoPdf" name="edital_inscricao_pdf" accept="application/pdf">
+            <small id="arquivoInscricaoAtual"></small>
+        </label>
+
+        
+        <div class="modal-actions">
+            <button type="button" id="cancelarEdicao">Cancelar</button>
+            <button type="submit" class="btn-primary" id="btnSalvarModal">
+            Salvar
+            </button>
+        </div>
+        </form>
+    </div>
+    </div>
+
+    <script src="./assets/menu/scriptMenu.js"></script>
+    <script src="./assets/dashboard/scriptDashboard.js"></script>
+</body>

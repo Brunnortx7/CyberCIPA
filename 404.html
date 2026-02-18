@@ -1,0 +1,10 @@
+<!doctype html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Redirecionando</title></head><body><script>
+const seg=location.pathname.split("/").filter(Boolean);
+const repo=seg.length?seg[0]:"";
+const base=repo?"/"+repo+"/":"/";
+const p=location.pathname.replace(/\/+$/,"");
+if(p.endsWith("/funcionarios")){location.replace(base+"funcionarios.html");}
+else if(p.endsWith("/perfil")){location.replace(base+"perfil.html");}
+else if(p.endsWith("/eleicao")){location.replace(base+"eleicao.html");}
+else{location.replace(base);}
+</script></body></html>

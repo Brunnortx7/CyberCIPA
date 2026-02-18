@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Eleição CIPA</title>
+  <link rel="stylesheet" href="./assets/style.css">
+  <link rel="stylesheet" href="./assets/menu/header.css">
+  <link rel="stylesheet" href="./assets/dashboard/eleicao.css">
+  <link rel="stylesheet" href="./assets/styleFeedbacks.css">
+  <link rel="stylesheet" href="./assets/modal.css">
+  <link rel="stylesheet" href="./assets/responsive.css" />
+</head>
+<body>
+
+  
+  <header class="topo">
+        <div class="logo-area">
+            <h1 class="logo">Eleições CIPA</h1>
+            <span class="slogan">Gerencie e acompanhe os processos eleitorais</span>
+        </div>
+
+        
+        <button class="hamburguerMenu" id="hamburguerMenu" aria-label="Abrir menu">
+            ☰
+        </button>
+
+        <nav class="nav" id="navMenu">
+            <a href="funcionarios.html" class="nav-link">Funcionários</a>
+            <a href="index.html" class="btn-primary" id="btnNovaEleicao">← Voltar ao Dashboard</a>
+            <a href="perfil.html" class="nav-link">Perfil</a>
+        </nav>
+    </header>
+
+  <main class="eleicao-container">
+    
+    <section class="eleicao-topo">
+      <h1 id="tituloEleicao"></h1>
+      <span id="statusEleicao" class="status"></span>
+      <small id="dataCriacao"></small>
+    </section>
+
+    
+    <section class="eleicao-conteudo">
+
+      
+      <div class="coluna-principal">
+        <div class="card apuracao">
+          <p>Apuração não iniciada</p>
+          <button class="btn-primary">Iniciar Apuração</button>
+        </div>
+
+        <div class="card">
+          <h3>Votos em Papel</h3>
+          
+        </div>
+      </div>
+
+      
+      <aside class="coluna-lateral">
+
+        
+        <div class="card">
+            <h4>Cronograma</h4>
+
+            <ul id="cronograma">
+            
+            </ul>
+
+            <button class="btn-link" onclick="abrirModalCronograma()">
+            Editar cronograma
+            </button>
+        </div>
+
+        
+        <div class="card">
+            <h4>Anexos da Eleição</h4>
+
+            <div class="anexo-item">
+            <span>Edital da Eleição</span>
+            <div id="anexo-edital"></div>
+            </div>
+
+            <div class="anexo-item">
+            <span>Edital de Inscrição</span>
+            <div id="anexo-inscricao"></div>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="cronograma-header">
+                <h4>Comissão Eleitoral</h4>
+                <button class="btn-acao" onclick="abrirModalComissao()">
+                Cadastrar / Editar
+                </button>
+            </div>
+
+            <ul id="listaComissao">
+                <li>Sem comissão cadastrada</li>
+            </ul>
+        </div>
+
+        </aside>
+
+    </section>
+
+  </main>
+
+    
+    <div id="modalAnexo" class="modal hidden">
+    <div class="modal-content modal-sm">
+        <div class="modal-header">
+        <h3 id="tituloModalAnexo"></h3>
+        <button onclick="fecharModalAnexo()">×</button>
+        </div>
+
+        <form id="formAnexo" enctype="multipart/form-data">
+        <input type="file" name="arquivo" accept="application/pdf" required>
+        <input type="hidden" id="tipoAnexo">
+
+        <div class="modal-actions">
+            <button type="button" onclick="fecharModalAnexo()">Cancelar</button>
+            <button type="submit" class="btn-primary">Salvar</button>
+        </div>
+        </form>
+    </div>
+    </div>
+
+    
+    <div id="modalCronograma" class="modal hidden">
+    <div class="modal-content modal-sm">
+
+        <div class="modal-header">
+        <h3>Editar Cronograma</h3>
+        <button type="button" onclick="fecharModalCronograma()">×</button>
+        </div>
+
+        <form id="formCronograma">
+
+        <label>
+            Edital
+            <input type="date" id="cronEdital" required>
+        </label>
+
+        <label>
+            Formação da Comissão
+            <input type="date" id="cronComissao" required>
+        </label>
+
+        <label>
+            Divulgação das Inscrições
+            <input type="date" id="cronDivulgacao" required>
+        </label>
+
+        <label>
+            Início das Inscrições
+            <input type="date" id="cronInicio" required>
+        </label>
+
+        <label>
+            Fim das Inscrições
+            <input type="date" id="cronFim" required>
+        </label>
+
+        <label>
+            Data da Eleição
+            <input type="date" id="cronEleicao" required>
+        </label>
+
+        <div class="modal-actions">
+            <button type="button" onclick="fecharModalCronograma()">Cancelar</button>
+            <button type="submit" class="btn-primary">Salvar</button>
+        </div>
+
+        </form>
+    </div>
+    </div>
+
+
+    
+    <div id="modalComissao" class="modal hidden">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h3>Comissão Eleitoral</h3>
+          <button type="button" onclick="fecharModalComissao()">×</button>
+        </div>
+
+        <div style="display:flex; gap:12px; flex-wrap:wrap; margin-bottom:12px;">
+          <label style="flex:1; min-width:220px;">
+            Funcionário
+            <select id="comissaoFuncionario" required></select>
+          </label>
+
+          <label style="flex:1; min-width:180px;">
+            Função
+            <select id="comissaoFuncao" required>
+              <option value="presidente">Presidente</option>
+              <option value="secretario">Secretário(a)</option>
+              <option value="membro">Membro</option>
+            </select>
+          </label>
+
+          <label style="flex:2; min-width:260px;">
+            Descrição (opcional)
+            <input id="comissaoDescricao" type="text" placeholder="Ex: Representante do RH" />
+          </label>
+
+          <button class="btn-primary" type="button" onclick="adicionarMembroComissao()" style="align-self:flex-end;">
+            + Adicionar
+          </button>
+        </div>
+
+        <div class="card" style="margin:0;">
+          <h4 style="margin:0 0 10px 0;">Membros</h4>
+          <ul id="comissaoPreview" style="margin:0; padding-left:18px;"></ul>
+        </div>
+
+        <div class="modal-actions">
+          <button type="button" onclick="fecharModalComissao()">Cancelar</button>
+          <button type="button" class="btn-primary" onclick="salvarComissao()">Salvar</button>
+        </div>
+      </div>
+    </div>
+
+
+
+  <script src="./assets/menu/scriptMenu.js"></script>
+  <script src="./assets/dashboard/eleicao.js"></script>
+</body>
+</html>
