@@ -1,14 +1,7 @@
-
-/* ===========================================
-   CyberCIPA — Responsive Pack (Mobile-first)
-   Este arquivo deve ser carregado por ÚLTIMO
-   =========================================== */
-
 :root{
   --pad: 16px;
 }
 
-/* Base */
 *{ box-sizing: border-box; }
 html, body{ width: 100%; max-width: 100%; overflow-x: hidden; }
 body{
@@ -18,7 +11,6 @@ body{
 }
 img{ max-width: 100%; height: auto; display: block; }
 
-/* Layout padrão */
 main{
   width: min(1100px, 100%);
   margin: 0 auto;
@@ -30,16 +22,14 @@ main{
   padding: 0 var(--pad);
 }
 
-/* Inputs e botões clicáveis */
 button, .btn, a.btn{
   min-height: 44px;
 }
 input, select, textarea{
   min-height: 44px;
-  font-size: 16px; /* evita zoom no iOS */
+  font-size: 16px; 
 }
 
-/* Filtros do dashboard: quebra sem estourar */
 .filtros{
   flex-wrap: wrap;
 }
@@ -52,7 +42,6 @@ input, select, textarea{
   min-width: 0;
 }
 
-/* Select com aparência consistente */
 select{
   background: #ffffff;
   color: #0f172a;
@@ -62,7 +51,6 @@ select option{
   color: #0f172a;
 }
 
-/* Cards do resumo: já tem breakpoint, mas reforça espaçamento */
 .resumo{
   flex-wrap: wrap;
 }
@@ -70,18 +58,15 @@ select option{
   min-width: 220px;
 }
 
-/* Lista de eleições: reduz min-width do card no mobile */
 .lista-eleicoes{
   grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
 }
 
-/* Modais: melhor no mobile */
 @media (max-width: 640px){
   :root{ --pad: 14px; }
 
   main{ padding: 18px var(--pad); }
 
-  /* Header: deixa o conteúdo respirar */
   .topo{
     padding: 14px var(--pad) !important;
   }
@@ -89,10 +74,8 @@ select option{
   .logo{ font-size: 18px; }
   .slogan{ font-size: 12px; }
 
-  /* Resumo vira coluna (já existe), aqui só ajusta fonte */
   .card-resumo strong{ font-size: 26px; }
 
-  /* Filtros: 1 coluna */
   .filtros{
     flex-direction: column;
     gap: 10px;
@@ -101,7 +84,6 @@ select option{
     width: 100%;
   }
 
-  /* Card ações quebra linha */
   .acoes{
     flex-wrap: wrap;
   }
@@ -109,7 +91,6 @@ select option{
     flex: 1 1 140px;
   }
 
-  /* Modal ocupa a tela e rola por dentro */
   .modal-content{
     width: calc(100vw - 20px) !important;
     max-width: 560px !important;
@@ -119,9 +100,6 @@ select option{
   }
 }
 
-/* =============================
-   Página Funcionários
-   ============================= */
 .funcionarios-container{
   width: min(1100px, 100%);
   margin: 0 auto;
@@ -150,7 +128,6 @@ select option{
   }
 }
 
-/* Tabelas: vira scroll horizontal no mobile */
 @media (max-width: 720px){
   .tabela-wrap, .table-wrap, .table-container{
     overflow-x: auto;
@@ -161,9 +138,6 @@ select option{
   }
 }
 
-/* =============================
-   Página Eleição
-   ============================= */
 @media (max-width: 900px){
   .eleicao-conteudo{
     grid-template-columns: 1fr !important;
@@ -180,9 +154,6 @@ select option{
   .card{ padding: 14px !important; border-radius: 14px !important; }
 }
 
-/* =============================
-   Perfil
-   ============================= */
 @media (max-width: 640px){
   .perfil-container, .profile-container, .perfil{
     width: min(1100px, 100%);
